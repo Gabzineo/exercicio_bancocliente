@@ -1,17 +1,21 @@
-package br.com.goliveira.domain;
 
-import java.util.Objects;
+package br.com.goliveira.domain;
 
 public class Cliente {
 
     private String nome;
     private Long cpf;
-    private Long tel;
-    private String end;
-    private Integer numero;
-    private String cidade;
-    private String estado;
+    private Long telefone;
+    private String endereco;
 
+    public Cliente(String nome, Long cpf, Long telefone, String endereco) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.telefone = telefone;
+        this.endereco = endereco;
+    }
+
+    // Getters e Setters
     public String getNome() {
         return nome;
     }
@@ -28,75 +32,27 @@ public class Cliente {
         this.cpf = cpf;
     }
 
-    public Long getTel() {
-        return tel;
+    public Long getTelefone() {
+        return telefone;
     }
 
-    public void setTel(Long tel) {
-        this.tel = tel;
+    public void setTelefone(Long telefone) {
+        this.telefone = telefone;
     }
 
-    public String getEnd() {
-        return end;
+    public String getEndereco() {
+        return endereco;
     }
 
-    public void setEnd(String end) {
-        this.end = end;
-    }
-
-    public Integer getNumero() {
-        return numero;
-    }
-
-    public void setNumero(Integer numero) {
-        this.numero = numero;
-    }
-
-    public String getCidade() {
-        return cidade;
-    }
-
-    public void setCidade(String cidade) {
-        this.cidade = cidade;
-    }
-
-    public String getEstado() {
-        return estado;
-    }
-
-    public void setEstado(String estado) {
-        this.estado = estado;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-        Cliente cliente = (Cliente) o;
-        return Objects.equals(cpf, cliente.cpf);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hashCode(cpf);
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
     }
 
     @Override
     public String toString() {
-        return "br.com.goliveira.domain.Cliente{" +
-                "nome='" + nome + '\'' +
-                ", cpf=" + cpf +
-                '}';
+        return "Nome: " + nome + "\n" +
+                "CPF: " + cpf + "\n" +
+                "Telefone: " + telefone + "\n" +
+                "Endereço: " + endereco;
     }
-
-    public Cliente (String nome, String cpf, String tel, String end, String num, String cidade, String estado){
-        this.nome = nome;
-        this.cpf = Long.valueOf(cpf.trim());
-        this.tel = Long.valueOf(cpf.trim());
-        this.end = end;
-        this.numero = Integer.valueOf(num.trim());
-        this.cidade = cidade;
-        this.estado = estado;
-    }
-
 }
-
